@@ -28,5 +28,27 @@ describe('Каталог:', async () => {
             
         }
     })
+
+    it('отображаются: название товара, его описание, цена, цвет, материал и кнопка "добавить в корзину"', async function({browser}) {
+        await browser.url("/hw/store/catalog" + bugId);
+
+        for (let i = 0; i <= 26; i++) {
+            await browser.url(`/hw/store/catalog/${i}/` + bugId);
+            const prodName = browser.$('.ProductDetails-Name')
+            const prodDesc = browser.$('.ProductDetails-Description')
+            const prodPrice = browser.$('.ProductDetails').$('.ProductDetails-Price')
+            const prodColor = browser.$('.ProductDetails-Color')
+            const prodMaterial = browser.$('.ProductDetails-Material')
+            const prodBtn = browser.$('.ProductDetails-AddToCart')
+            
+            assert(await prodName.isExisting(), "Названия продкута нет")
+            assert(await prodDesc.isExisting(), "Нет описания продукта")
+            assert(await prodPrice.isExisting(), "Нет цены продукта")
+            assert(await prodMaterial.isExisting(), "Нет материала продукта")
+            assert(await prodColor.isExisting(), "Нет цвета продукта")
+            assert(await prodBtn.isExisting(), "Нет кнопки")
+        }
+    })
+   
 })
 
