@@ -5,8 +5,8 @@
         "start": "nodemon ./src/server/index.ts",
         "test": "jest",
         "build": "webpack --mode=production --node-env=production",
-        "hermione": ".\\node_modules\\.bin\\hermione test/hermione",
-        "guiHermione": ".\\node_modules\\.bin\\hermione gui test/hermione",
+        "hermione": ".\\node_modules\\.bin\\hermione test/hermione --shm-size=1gb",
+        "guiHermione": ".\\node_modules\\.bin\\hermione gui test/hermione --shm-size=1gb",
         "watch": "webpack --watch"
     },
     "dependencies": {

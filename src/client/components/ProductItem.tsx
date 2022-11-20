@@ -17,7 +17,7 @@ export const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
         <div data-testid={product.id} className={bem(null, ['card', 'w-100', 'mb-4'])}>
             <Image className="card-img-top" />
             <div className="card-body">
-                <h5 className={bem('Name', ['card-title'])}>{product.name}</h5>
+                <h5 className={bem('Name', ['card-title'])}>{product.name}</h5> 
                 <p className={bem('Price', ['card-text'])}>
                     ${product.price}
                 </p>
